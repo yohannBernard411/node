@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html
+  head
+  body
+    h1 Hello world
+    
+    div(class='test5' id='monid')
+      div(class=['test1', 'test2', 'test3'])
+        p(style='color:red;') ceci est un paragraphe
+        p(style={color: 'red', background: 'blue'}) ceci est un autre paragraphe
+    div.container
+      div.content
+        p.test.
+          un texte sur plusieurs lignes
+          grace au point apres le p
+          qui evite que mes lignes soient
+          prisent pour d'autres balises.
+      style.
+          .test {
+            font-size: 50px;
+          }
+      script.
+        console.log('bonjour monde');
+
+        

@@ -1,0 +1,17 @@
+.content{
+  max-width: 1000px;
+  margin-top: 20px;
+}
+.profile-container{
+  width: 30%;
+  max-width: 300px;
+}
+.btn-tweet{
+  border-radius: 30px;
+}
+.b{
+  border: solid 1px red;
+}
+.b1{
+  border: solid 1px green;
+}

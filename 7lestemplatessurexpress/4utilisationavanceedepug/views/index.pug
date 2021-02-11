@@ -1,0 +1,37 @@
+extends layout.pug
+
+block content
+
+    h1 Hello world
+    div(class=['test1', 'test2', 'test3'])
+      p(style='color:red;') ceci est un paragraphe
+    div.container
+      .content
+        p #{ name }
+        p=name
+    if authenticated
+      p je suis connecté
+    else
+      p je ne suis pas connecté
+    case friends
+      when 0
+        p remy sans amis
+      when 1
+        p un peu limite un ami!
+      when 2
+        p tu n'as que deux amis!!!
+      default
+        p tu as plein d'amis, #{ friends } exactement
+
+    each product in products
+      div.product
+        h4=product.title
+        p #{ product.content }
+    style.
+          .test {
+            font-size: 50px;
+          }
+    script.
+      console.log('bonjour monde');
+
+        

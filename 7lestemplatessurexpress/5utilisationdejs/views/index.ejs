@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mon titre</title>
+</head>
+<body>
+
+  <%- include('topbar') %>
+
+  <h1>Hello <%= name %></h1>
+  <p><%- firstname %></p>
+  <% if (authenticated) { %>
+    <p>Vous etes connecté</p>
+  <% } else { %>
+    <p>Vous n'etes pas connecté</p>
+  <% } %>
+
+  <% products.forEach(function(product){ %>
+    <div class="product">
+      <h4><%= product.title %></h4>
+      <p><%= product.content %></p>
+    </div>
+  <% }) %>
+</body>
+</html>
