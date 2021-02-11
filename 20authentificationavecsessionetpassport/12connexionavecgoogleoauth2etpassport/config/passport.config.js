@@ -2,6 +2,7 @@ const passport = require('passport');
 const { app } = require('../app');
 const User = require('../database/models/user.model');
 const LocalStrategy = require('passport-local').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const { findUserPerEmail } = require('../queries/user.queries');
 
 app.use(passport.initialize()); //19m39
@@ -36,4 +37,12 @@ passport.use('local', new LocalStrategy({usernameField: 'email'}, async (email, 
   }catch(e){
     done(e);
   }
+}));
+
+passport.use('google', new GoogleStrategy({
+  clientID: '<mettre ici le client id recuperer lors de l\'inscription chez google>',
+  clientSecret: '<mettre ici le secret recuperer lors de l\inscription chez google',
+  callbackURL: '/auth/google/cb'
+}, (accessToken, refreshToken, profile, done) => {
+
 }))
