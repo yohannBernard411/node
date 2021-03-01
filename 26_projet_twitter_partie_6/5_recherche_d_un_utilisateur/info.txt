@@ -1,0 +1,3 @@
+a partir d'ici, se repporter au chapitre: 25mise_en_production_d_une_application
+et à la leçon: 4creation_d_un_github_et_connection_ssh/
+puisqu'il est lié au github et ne peut donc pas étre dupliqué!

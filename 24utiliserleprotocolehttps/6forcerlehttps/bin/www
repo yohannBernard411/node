@@ -1,0 +1,21 @@
+const http = require('http');
+const https = require('https');
+const app = require('../app');
+const fs = require('fs');
+const path = require('path');
+http.createServer( (req, res) => {
+  console.log('http serveur!');
+  console.log('req.headers.host: ');
+  console.log(req.headers.host);
+  console.log('req.url: ');
+  console.log(req.url);
+  res.writeHead('301', { location: `https://${ req.headers.host }${ req.url }`});
+  res.end();
+}).listen(80);
+
+const server = https.createServer({
+  key: fs.readFileSync(path.join(__dirname, '../ssl/local.key')),
+  cert: fs.readFileSync(path.join(__dirname, '../ssl/local.crt'))
+}, app);
+
+server.listen(443);

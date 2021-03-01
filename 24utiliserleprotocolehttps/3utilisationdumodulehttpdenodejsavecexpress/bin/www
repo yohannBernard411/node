@@ -1,0 +1,16 @@
+// const http = require('http');
+// const app =require('../app');
+
+// const server = http.createServer(app);
+
+// server.listen(3000);
+
+const https = require('https');
+const app =require('../app');
+
+const server = https.createServer({
+  key: '',
+  cert: ''
+}, app);
+
+server.listen(3000);
