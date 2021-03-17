@@ -33,7 +33,7 @@ const extractUserFromToken = async (req, res, next) => {
 }
 
 const addJwtFeatures = (req, res, next) => {
-  req.isAuthenticate = () => !!req.user;
+  req.isAuthenticated = () => !!req.user;
   req.logout = () => res.clearCookie('jwt');
   req.login = (user) => {
     const token = createJwtToken(user);

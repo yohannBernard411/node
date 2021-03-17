@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Websocket</h1>
+  <img>
+</body>
+  <script>
+    const websocket = new WebSocket('ws://localhost:4001');
+    const reader = new FileReader();
+    const image = document.querySelector('img');
+
+    websocket.onmessage = (msg) => {
+      console.log(msg);
+      reader.readAsDataURL(msg.data);
+      reader.onload = () => {
+        image.src = reader.result
+      }
+    }
+
+  </script>
+</html>
